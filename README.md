@@ -13,6 +13,22 @@ Returns `value`, if it is between `a` and `b`. Otherwise, returns the number
 it's gone past.
 
 
+## lerp
+
+Linearly interpolate between 2 values
+
+### Usage
+
+`lerp(a, b, amount)`
+
+`amount` should be a value between 0 and 1, indicating how far to interpolate from `a` to `b`
+
+```javascript
+
+const val = lerp(10, 20, 0.5) // val === 15
+```
+
+
 ## sign
 
 `Math.sign` was added to Javascript somewhat recently. It's behavior regarding `0` is to not give it 
