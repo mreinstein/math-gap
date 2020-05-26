@@ -85,13 +85,25 @@ const result = round(-3.5)  // -4
 ```
 
 
-
 ### background
+see https://www.eetimes.com/document.asp?doc_id=1274485 for in-depth details of rounding algorithms
 
-(courtesy of https://www.eetimes.com/document.asp?doc_id=1274485)
 
-Round-half-up: This algorithm, which may also be referred to as arithmetic rounding, is the one that we typically associate with the rounding we learned at grade-school. In this case, a half-way value such as 3.5 will round up to 4. One way to view this is that, at this level of precision and for this particular example, we can consider there to be ten values that commence with a 3 in the most-significant place (3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, and 3.9). On this basis, it intuitively makes sense for five of the values to round down and for the other five to round up; that is, for the five values 3.0 through 3.4 to round down to 3, and for the remaining five values 3.5 through 3.9 to round up to 4.
+## to-degrees
 
-The tricky point with the round-half-up algorithm arrives when we come to consider negative numbers. In the case of the values -3.1, -3.2, -3.3, and -3.4, these will all round to the nearest integer, which is -3; similarly, in the case of values like -3.6, -3.7, -3.8, and -3.9, these will all round to -4. The problem arises in the case of -3.5 and our definition as to what "up" means in the context of round-half-up. Based on the fact that a value of +3.5 rounds up to +4, most of us would intuitively expect a value of -3.5 to round to -4. In this case, we would say that our algorithm was symmetric for positive and negative values.
+Converts `radians` to its corresponding value in `degrees`.
 
-However, some applications (and mathematicians) regard "up" as referring to positive infinity. Based on this, -3.5 will actually round to -3, in which case we would class this as being an asymmetric implementation of the round-half-up algorithm. For example, the round method of the Java Math Library provides an asymmetric implementation of the round-half-up algorithm, while the round function in MATLAB provides a symmetric implementation. (Just to keep us on our toes, the round function in Visual Basic for Applications 6.0 actually implements the round-half-even [Banker's rounding] algorithm discussed below.)
+```javascript
+const d1 = toDegrees(0.5235987755982988)  // d1 === 29.999999999999996
+
+const d2 = toDegrees(0.5235987755982989)  // d2 === 30.000000000000004
+````
+
+
+## to-radians
+
+Converts `degrees` to its corresponding value in `radians`.
+
+```javascript
+const val = toRadians(30) // val === 0.5235987755982988
+````
