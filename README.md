@@ -51,44 +51,6 @@ sign(-1) // returns -1
 ```
 
 
-
-## round-half-up-symmetric
-
-Javascript's `Math.round()` has some unexpected behavior when rounding negative numbers, in that it rounds torwards +∞:
-
-```javascript
-Math.round(-20.5)  // -20
-```
-
-This is commonly known as asymmetric rounding. I want symmetric rounding instead:
-
-```javascript
-round(-20.6)   // -21
-round(-20.5)   // -21
-round(-20.4)   // -20
-```
-
-That's what this module accomplishes. There are a bunch of modules in npm for rounding but I couldn't find any that satisfied all of these criteria:
-* avoids costly error checking on input values
-* has no dependencies
-* has tests
-* is < 10 lines
-* works with both es modules and commonjs
-
-
-### usage
-
-Then round decimals to your heart's content:
-
-```javascript
-const result = round(-3.5)  // -4
-```
-
-
-### background
-see https://www.eetimes.com/document.asp?doc_id=1274485 for in-depth details of rounding algorithms
-
-
 ## to-degrees
 
 Converts `radians` to its corresponding value in `degrees`.
