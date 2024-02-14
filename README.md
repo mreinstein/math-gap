@@ -85,7 +85,7 @@ flags = bitfield.set(flags, 0, false) // flags === 00000100
 ````
 
 
-## QuantizeAngle
+## quantize-angle
 pack/unpack an angle expressed in radians to/frame a byte
 
 ```javascript
