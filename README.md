@@ -3,7 +3,7 @@ math functions that are missing or lacking from the standard javascript library
 
 ## clamp
 
-It's 2020 and Javascript still doesn't have `clamp`...
+It's 2023 and Javascript still doesn't have `clamp`...
 
 ### Usage
 
@@ -69,3 +69,33 @@ Converts `degrees` to its corresponding value in `radians`.
 ```javascript
 const val = toRadians(30) // val === 0.5235987755982988
 ````
+
+
+## bitfield
+
+get and set bits
+
+```javascript
+let flags = 0 // a byte (contains 8 bits)
+flags = bitfield.set(flags, 0, true)  // flags === 00000001
+flags = bitfield.set(flags, 2, true)  // flags === 00000101
+console.log(bitfield.get(flags, 2))   // true
+console.log(bitfield.get(flags, 1))   // false
+flags = bitfield.set(flags, 0, false) // flags === 00000100
+````
+
+
+## QuantizeAngle
+pack/unpack an angle expressed in radians to/frame a byte
+
+```javascript
+const angle = Math.PI * 0.3
+
+const u = new Uint8Array(1)
+u[0] = quantizeAngle.pack(angle)
+
+
+const angle2 = quantizeAngle.unpack(u[0])
+
+console.log(angle === angle2) // true
+```
