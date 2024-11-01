@@ -1,5 +1,5 @@
 import test  from 'tape'
-import clamp from '../clamp.js'
+import clamp from '../src/clamp.js'
 
 
 test('clamp', function (t) {

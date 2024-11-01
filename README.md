@@ -3,7 +3,7 @@ math functions that are missing or lacking from the standard javascript library
 
 ## clamp
 
-It's 2023 and Javascript still doesn't have `clamp`...
+It's 2024 and Javascript still doesn't have `clamp`...
 
 ### Usage
 
