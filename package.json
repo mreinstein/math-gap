@@ -1,6 +1,6 @@
 {
   "name": "@footgun/math-gap",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "math functions that are missing or lacking from the standard javascript library",
   "main": "math-gap.js",
   "type": "module",

@@ -29,6 +29,22 @@ const val = lerp(10, 20, 0.5) // val === 15
 ```
 
 
+## lerp-degrees
+
+Linearly interpolate between 2 angles in degrees
+
+### Usage
+
+`lerpDegrees(a, b, amount)`
+
+`amount` should be a value between 0 and 1, indicating how far to interpolate from `a` to `b`
+
+```javascript
+
+const val = lerpDegrees(120, 340, 0.5) // val === 230
+```
+
+
 ## sign
 
 `Math.sign` was added to Javascript somewhat recently. It's behavior regarding `0` is to not give it 
